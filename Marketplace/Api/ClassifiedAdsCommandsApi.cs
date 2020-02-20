@@ -18,10 +18,12 @@ namespace Marketplace.Api
         public async Task<IActionResult> Post(
             Contracts.ClassifiedAds.V1.Create request)
         {
-            await _applicationService.Handle(request);
+            _applicationService.Handle(request);
 
-            Encoding.UTF8.GetBytes(JsonConvert.SerializeObject(message));
-            
+            //await _applicationService.Handle(request);
+
+            //Encoding.UTF8.GetBytes(JsonConvert.SerializeObject(message));
+
             return Ok();
         }
     }
